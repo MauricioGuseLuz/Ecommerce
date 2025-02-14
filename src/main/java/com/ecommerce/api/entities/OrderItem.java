@@ -2,21 +2,21 @@ package com.ecommerce.api.entities;
 
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
-import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+@Setter
+@Getter
 @Entity
-@Table(name = "tb_order_item")
+@Table(name = "order_items")
 public class OrderItem {
 
+    // Getters e Setters
     @EmbeddedId
-    private OrdemItemPK id = new OrdemItemPK();
+    private OrdemItemPK id;
 
     private Integer quantity;
-
     private Double price;
-
 
 }

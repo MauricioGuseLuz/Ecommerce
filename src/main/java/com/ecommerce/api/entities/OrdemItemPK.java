@@ -1,23 +1,36 @@
 package com.ecommerce.api.entities;
 
 import jakarta.persistence.Embeddable;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
+import java.io.Serial;
 import java.io.Serializable;
+import java.util.Objects;
 
+@Setter
+@Getter
 @Embeddable
-@Data
-public class OrdemItemPK {
+public class OrdemItemPK implements Serializable {
 
-    public class OrderItemPK implements Serializable {
-        @ManyToOne
-        @JoinColumn(name = "order_id")
-        private Order order;
+    @Serial
+    private static final long serialVersionUID = 1L;
 
-        @ManyToOne
-        @JoinColumn(name = "product_id")
-        private Product product;
+    // Getters e Setters
+    private Long orderId;
+    private Long productId;
+
+    // Implementação dos métodos equals() e hashCode()
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        OrdemItemPK that = (OrdemItemPK) o;
+        return Objects.equals(orderId, that.orderId) && Objects.equals(productId, that.productId);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(orderId, productId);
     }
 }
