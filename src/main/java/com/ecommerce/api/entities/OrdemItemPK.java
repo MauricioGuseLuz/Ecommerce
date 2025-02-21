@@ -16,11 +16,11 @@ public class OrdemItemPK implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
 
-    // Getters e Setters
+
     private Long orderId;
     private Long productId;
 
-    // Implementação dos métodos equals() e hashCode()
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

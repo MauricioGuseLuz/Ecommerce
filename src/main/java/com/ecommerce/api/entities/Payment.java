@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.Instant;
+import java.time.LocalDateTime;
 
 @Data
 @Entity
@@ -15,8 +16,8 @@ public class Payment {
 
     private Long id;
 
-    @Column(columnDefinition = "Timestamp without time zone")
-    private Instant moment;
+
+    private LocalDateTime moment;
 
     @OneToOne
     @MapsId

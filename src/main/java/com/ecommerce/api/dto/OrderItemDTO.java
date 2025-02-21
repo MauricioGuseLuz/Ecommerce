@@ -5,7 +5,7 @@ import jakarta.validation.constraints.Positive;
 import lombok.Data;
 
 @Data
-public class OrderItemDto {
+public class OrderItemDTO {
 
     private Long orderId;
     private Long productId;

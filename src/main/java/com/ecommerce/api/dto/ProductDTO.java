@@ -5,13 +5,12 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
-import org.hibernate.annotations.OptimisticLock;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Data
-public class ProductDto {
+public class ProductDTO {
 
     private Long id;
 
@@ -30,6 +29,6 @@ public class ProductDto {
     private String image;
 
     @NotNull(message = "Categoria é obrigatório")
-    private List<CategoryDto> categories = new ArrayList<>();
+    private List<CategoryDTO> categories = new ArrayList<>();
 
 }

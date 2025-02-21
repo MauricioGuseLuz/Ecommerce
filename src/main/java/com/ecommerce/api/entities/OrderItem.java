@@ -12,7 +12,7 @@ import lombok.Setter;
 @Table(name = "order_items")
 public class OrderItem {
 
-    // Getters e Setters
+
     @EmbeddedId
     private OrdemItemPK id;
 

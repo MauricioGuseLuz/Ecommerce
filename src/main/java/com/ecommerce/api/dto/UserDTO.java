@@ -7,7 +7,7 @@ import lombok.Data;
 import java.time.LocalDate;
 
 @Data
-public class UserDto {
+public class UserDTO {
 
     @NotNull(message = "Id é obrigatório para atualização")
     private Long id;
@@ -35,7 +35,7 @@ public class UserDto {
 
     @AssertTrue(message = "Usuário deve ser maior de idade")
     public boolean isAdult() {
-        // lógica para validar maioridade
+
         return LocalDate.parse(birthDate).isBefore(LocalDate.now().minusYears(18));
     }
 

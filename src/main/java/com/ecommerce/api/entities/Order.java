@@ -16,8 +16,8 @@ public class Order {
 
     private Long id;
 
-    @Column(columnDefinition = "Timestamp without time zone")
-    private Instant moment;
+
+    private LocalDateTime moment;
 
     private OrderStatus status;
 
