@@ -1,9 +1,12 @@
 package com.ecommerce.api.entities;
 
+import com.ecommerce.api.dto.CategoryDTO;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Data
@@ -36,4 +39,6 @@ public class Product {
     )
     private Set<Category> categories = new HashSet<>();
 
+    public void setCategories(@NotNull(message = "Categoria é obrigatório") List<CategoryDTO> categories) {
+    }
 }
